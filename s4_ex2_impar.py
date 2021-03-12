@@ -1,3 +1,5 @@
+# recebe um número n e imprime os n primeiros números ímpares
+
 n = int(input())
 i = 1
 

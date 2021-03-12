@@ -1,3 +1,5 @@
+#define a função vogal(), que recebe uma string de um caractere e retorna True de o caractere for uma vogal, senão retorna False
+
 def vogal(x):
     char = x.lower()
     if (char == "a") or (char == "e") or (char == "i") or (char == "o") or (char == "u"):

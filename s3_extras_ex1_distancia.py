@@ -1,3 +1,5 @@
+#recebe as coordenadas x e y de 2 pontos e retorna a distância entre eles
+
 import math
 
 x1 = int(input())

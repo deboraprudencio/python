@@ -1,3 +1,5 @@
+#recebe um número e retorna se ele é primo ou não
+
 n = int(input())
 i = 2
 primo = True

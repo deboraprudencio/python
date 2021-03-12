@@ -1,3 +1,5 @@
+#roda o jogo do nim, em partidas ou campeonatos de 3 partidas
+
 def computador_escolhe_jogada(n, m):
     p = m
     while (p > 0):

@@ -1,3 +1,5 @@
+# recebe um número inteiro e retorna o fatorial desse número
+
 n = int(input())
 fat = 1
 

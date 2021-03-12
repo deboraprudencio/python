@@ -1,3 +1,6 @@
+# recebe um número e retorna se ele contém dígitos adjacentes iguais ou não
+# usa o método exit() do módulo sys
+
 import sys
 
 n = int(input())

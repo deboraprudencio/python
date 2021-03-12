@@ -1,3 +1,5 @@
+#recebe as informações da fatura de um cliente e envia uma mensagem
+
 nome = input("Digite o nome do cliente")
 dia = input("Digite o dia de vencimento")
 mes = input("Digite o mês de vencimento")

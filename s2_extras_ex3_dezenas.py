@@ -1,3 +1,5 @@
+#recebe um número inteiro e diz qual é seu dígito das dezenas
+
 num = int(input("Digite um número inteiro: "))
 
 r100 = num % 100

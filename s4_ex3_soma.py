@@ -1,3 +1,5 @@
+# recebe um número inteiro e retorna a soma de seus dígitos
+
 n = int(input())
 soma = 0
 

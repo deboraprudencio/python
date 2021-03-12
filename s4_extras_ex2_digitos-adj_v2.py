@@ -1,3 +1,6 @@
+# recebe um número e retorna se ele contém dígitos adjacentes iguais ou não
+# usa uma variável indicador de passagem
+
 n = int(input())
 dif = True
 

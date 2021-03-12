@@ -1,3 +1,9 @@
+# define e testa a função fizzbuzz, que recebe um número
+# retorna "fizzbuzz" se ele for múltiplo de 3 e 5
+# retorna "fizz" se ele for múltiplo só de 3
+# retorna "buzz" se ele for múltiplo só de 5
+# retorna o próprio número se ele não for múltiplo nem de 3 nem de 5
+
 def fizzbuzz (n):
     resultado = ""
     if (n % 3 == 0): resultado += "Fizz"

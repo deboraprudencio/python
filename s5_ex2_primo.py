@@ -1,3 +1,5 @@
+# define e testa a função maior_primo(), que recebe um número inteiro e retorna o maior número primo menor ou igual a ele
+
 def maior_primo (n):
 
     while (n > 0):

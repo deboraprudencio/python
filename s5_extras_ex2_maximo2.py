@@ -1,3 +1,5 @@
+# define e testa a função maximo(), que recebe três números e retorna o maior deles
+
 def maximo (x, y, z):
     max = x
     if (y > x): max = y

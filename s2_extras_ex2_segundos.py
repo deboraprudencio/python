@@ -1,3 +1,5 @@
+#recebe um número de segundos e converte em dias, horas, minutos e segundos
+
 s0 = input("Por favor, entre com o número de segundos que deseja converter:")
 
 s1 = int(s0)

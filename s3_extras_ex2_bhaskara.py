@@ -1,3 +1,5 @@
+# recebe os parâmetros a, b e c de uma equação de segundo grau e retorna suas raízes
+
 import math
 
 a = float(input("a ="))
