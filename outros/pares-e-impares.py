@@ -1,3 +1,5 @@
+# recebe a quantidade n de números, pede n números e retorna quantos são pares e quantos são ímpares
+
 n = int(input("Quantidade de números:"))
 par = 0
 impar = 0

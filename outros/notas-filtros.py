@@ -1,3 +1,6 @@
+# recene um número n de alunos, pede n notas
+# retorna quantos foram reprovados, quantos ficaram de recuperação, quantos foram aprovados e quantos tiveram um desempenho muito bom 
+
 i = n = int(input("Quantos alunos?"))
 rep = rec = apr = bom = 0
 

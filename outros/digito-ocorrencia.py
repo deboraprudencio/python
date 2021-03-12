@@ -1,3 +1,5 @@
+# recebe um número e um dígito e retorna quantas vezes o dígito aparece no número
+
 n = int(input("Número:"))
 d = int(input("Dígito:"))
 vezes = 0

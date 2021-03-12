@@ -1,3 +1,5 @@
+#recebe uma temperatura e retorna se a água ferve e evapora ou não
+
 temp = int(input("Qual a temperatura?"))
 
 if temp > 100:

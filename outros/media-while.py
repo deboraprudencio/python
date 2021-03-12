@@ -1,3 +1,5 @@
+# recebe um número n de alunos, pede n notas e calcula a média aritmética dessas notas
+
 n = int(input("Quantos alunos?"))
 soma = 0
 

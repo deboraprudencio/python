@@ -1,3 +1,5 @@
+# recebe um número e verifica se ele pode ser representado por um produto de 3 números consecutivos
+
 import sys
 
 n = int(input())
