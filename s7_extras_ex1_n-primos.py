@@ -22,7 +22,7 @@ def teste_1():
     assert n_primos(2) == 1
 
 def teste_2():
-assert n_primos(4) == 2
+    assert n_primos(4) == 2
 
 def teste_3():
-assert n_primos(121) == 30
+    assert n_primos(121) == 30

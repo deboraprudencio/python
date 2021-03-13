@@ -24,6 +24,3 @@ def soma_hipotenusas(n):
 
 def test_1():
     assert soma_hipotenusas(25) == 105
-
-def test_2():
-    assert soma_hipotenusas(1) == 0
