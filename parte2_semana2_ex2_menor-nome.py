@@ -8,10 +8,10 @@ def menor_nome(nomes):
     menor_nome = nomes[0]
 
     for nome in nomes:
-        nome = nome.strip().capitalize()
+        nome = nome.strip()
         if len(nome) < len(menor_nome): menor_nome = nome
     
-    return menor_nome
+    return menor_nome.capitalize()
 
 def test_0():
     assert menor_nome(["ana     ", "josé", "Arquibaldo", "Julia"]) == "Ana"
@@ -30,3 +30,9 @@ def test_4():
     
 def test_5():
     assert menor_nome(['Bárbara', 'JOSÉ  ', 'Bill']) == 'José'
+
+def test_6():
+    assert menor_nome(['zé', ' lu', 'fê']) == 'Zé'
+    
+def test_7():
+    assert menor_nome([' zé', ' lu', '      fê']) == 'Zé'

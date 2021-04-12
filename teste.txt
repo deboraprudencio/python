@@ -1,0 +1,54 @@
+Como faz pra gravar um txt do terminal:
+
+nome = "poesia.txt"    # poderia ser um input("Digite o nome do arquivo: ")
+
+with open(nome, 'w', encoding='utf-8') as arq:
+    # CORPO DO WITH
+    arq.write("    O poeta é um fingidor.      \n")
+    arq.write("    Finge tão completamente     \n")
+    arq.write("    Que chega a fingir que é dor\n")
+    arq.write("    A dor que deveras sente.    \n")
+    arq.write("                Fernando Pessoa.\n")
+
+Utilizamos o comando with para nos proteger contra alguns problemas que podem acontecer com arquivos (que não iremos detalhar no momento).
+A função open() abre o arquivo de nome poesia.txt (certifique-se de incluir todo o caminho (path) no nome, ou o arquivo será gravado no 
+mesmo diretório do programa sendo executado) para gravação (devido a opção w do inglês write) e, para garantir que o arquivo será gravado
+em utf-8, definimos também a forma de codificação pela opção encoding.
+
+Dentro comando with (corpo do with), devemos fazer todas as operações com o arquivo arq (pode ser qualquer nome de variável), 
+nesse exemplo, escrever algumas linhas de texto usando o método write(). Observe que o \n faz a mudança de linha explicitamente. 
+Uma grande vantagem de utilizar o comando with é que o arquivo é fechado automaticamente ao final do corpo, não sendo necessário fechar 
+o arquivo explicitamente.
+
+----------------------------------------------------------------------------------------------------------
+
+Há também o comando .read(). Teste:
+
+nome = "poesia.txt"    # poderia ser um input("Digite o nome do arquivo: ")
+
+with open(nome, 'r', encoding='utf-8') as arq_entrada:
+    # CORPO DO WITH
+    conteudo = arq_entrada.read()
+
+# continue o programa usando conteudo
+print(conteudo)
+
+----------------------------------------------------------------------------------------------------------
+
+O txt também pode ser lido linha a linha:
+
+nome = "poesia.txt"
+
+with open(nome, 'r', encoding='utf-8') as arquivo:
+    for linha in arquivo:
+        print(linha)
+
+----------------------------------------------------------------------------------------------------------
+
+.strip() desconsidera qualquer caractere em branco no início ou fim (espaços, enters, tabs)
+
+----------------------------------------------------------------------------------------------------------
+
+.split() separa a string onde houver espaços (ex: separa uma frase em palavras)
+
+----------------------------------------------------------------------------------------------------------
