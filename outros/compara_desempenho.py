@@ -1,30 +1,33 @@
-from time import  *
+from time import  time, sleep
 
 class Runtime:
     def __init__(self, method_list, input_list, tester_method):
         self.methods = method_list
         self.inputs = input_list
         self.test = tester_method
+
         self.runtimes = [[] for i in self.inputs]
         self.faster = [0 for i in self.inputs]
         self.fastest = 0
     
     def __str__(self):
         s = ''
-        for i in range(len(self.inputs)):
-            s += "Input " + str(i)
-            s += "\n--------------------------------------------------\n"
+        if self.runtimes.count([]) == len(self.runtimes): s= "Nothing ran"
+        else:
+            for i in range(len(self.inputs)):
+                s += "Input " + str(i)
+                s += "\n--------------------------------------------------\n"
 
-            for m in range(len(self.methods)):
-                s += str(self.methods[m].__name__)
-                if self.runtimes[i][m] == None: s+= " ran incorrectly"
-                else: s += " ran in " + str(self.runtimes[i][m]) + " seconds\n"
+                for m in range(len(self.methods)):
+                    s += str(self.methods[m].__name__)
+                    if self.runtimes[i][m] == None: s+= " ran incorrectly"
+                    else: s += " ran in " + str(self.runtimes[i][m]) + " seconds\n"
 
-            s += "\n--------------------------------------------------\n"
-            s += str(self.methods[self.faster[i]].__name__) + " was faster"
-            s += "\n\n+++++++++++++++++++++++++++++++++++++++++++++++++\n\n"
-        
-        s += str(self.methods[self.fastest].__name__) + " is the fastest overall"
+                s += "\n--------------------------------------------------\n"
+                s += str(self.methods[self.faster[i]].__name__) + " was faster"
+                s += "\n\n+++++++++++++++++++++++++++++++++++++++++++++++++\n\n"
+            
+            s += str(self.methods[self.fastest].__name__) + " is the fastest overall"
 
         return s
 
@@ -41,8 +44,7 @@ class Runtime:
     def verify(self, method_index, input_index):
         result = self.methods[method_index](self.inputs[input_index])
         
-        if self.test(result): return True
-        else: return False
+        return self.test(result)
     
     def run_all(self):
         for i in range(len(self.inputs)):
@@ -83,5 +85,5 @@ if __name__ == "__main__":
     
     method_list = [lento, rapido, variavel, errado]
     input_list = [0, 1.5, 2]
-
+    
     print(Runtime(method_list, input_list, tester_method).run_all())
