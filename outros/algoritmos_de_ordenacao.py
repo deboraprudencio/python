@@ -2,23 +2,6 @@ from compara_desempenho import *
 from random import *
 from sys import *
 
-def lista_grande(n):
-    return [randrange(- maxsize, maxsize) for i in range(n)]
-
-def lista_quase_ordenada(n):
-    lista = [i for i in range(n)]
-    lista[n - 1] = 0
-    return lista
-
-def crescente(seq):
-    ''' (list) -> bool
-        retorna True se seq esta em ordem crescente
-        e False caso contrario
-        '''
-    for i in range(len(seq) - 1):
-        if seq[i + 1] < seq[i]: return False
-    return True
-
 def insercao(seq):
     ''' (list) -> list
         ordena a lista seq usando o algoritmo de insercao
@@ -54,24 +37,24 @@ def bolha(seq):
                 trocou = True
     return seq
 
-def bubble_sort(lista):
-    '''bubble_sort(lista) --> lista
-        Recebe uma lista com números inteiros como parâmetro
-        Devolve esta lista em ordem crescente, utilizando o algoritmo bubble sort.
-        Imprime o estado atual da lista toda vez que faz uma alteração em seus elementos.
-    '''
-
-    reordenou = False
-
-    for i in range(len(lista) - 1, 0, -1):
-        for j in range(i):
-            if lista[j] > lista[j + 1]:
-                lista[j], lista[j + 1] = lista[j + 1], lista[j]
-                reordenou = True
-        if not reordenou: return lista
-    return lista
-
 def testes():
+    def lista_grande(n):
+        return [randrange(- maxsize, maxsize) for i in range(n)]
+
+    def lista_quase_ordenada(n):
+        lista = [i for i in range(n)]
+        lista[n - 1] = 0
+        return lista
+
+    def crescente(seq):
+        ''' (list) -> bool
+        retorna True se seq esta em ordem crescente
+        e False caso contrario
+        '''
+        for i in range(len(seq) - 1):
+            if seq[i + 1] < seq[i]: return False
+        return True
+
     def teste_crescente():
         listas = [[1, 2, 3], [1, 1, 1], [-1, -2, -3], [-3, -2, -1], [1, 3, 1], 
             [3, 1, 2], [1.1, 1.2, 1.3], ["a", "b", "c"], ["c", "b", "a"]]
