@@ -1,0 +1,88 @@
+from compara_desempenho import *
+from random import *
+from sys import *
+
+def lista_grande(n):
+    return [randrange(- maxsize, maxsize) for i in range(n)]
+
+def lista_quase_ordenada(n):
+    lista = [i for i in range(n)]
+    lista[n - 1] = 0
+    return lista
+
+def crescente(seq):
+    ''' (list) -> bool
+        retorna True se seq esta em ordem crescente
+        e False caso contrario
+        '''
+    for i in range(len(seq) - 1):
+        if seq[i + 1] < seq[i]: return False
+    return True
+
+def insercao(seq):
+    ''' (list) -> list
+        ordena a lista seq usando o algoritmo de insercao
+        '''
+    for i in range(len(seq)):
+        j = i
+        while j > 0 and seq[j - 1] > seq[j]:
+            seq[j], seq[j - 1] = seq[j - 1], seq[j]
+            j -= 1
+    return seq
+
+def selecao(seq):
+    ''' (list) -> list
+        ordena a lista seq usando o algoritmo de selecao
+        '''
+    for i in range(len(seq)):
+        menor = i
+        for j in range(i + 1, len(seq)):
+            if seq[j] < seq[menor]: menor = j
+        seq[i], seq[menor] = seq[menor], seq[i]
+    return seq
+
+def bolha(seq):
+    ''' (list) -> list
+        ordena a lista seq usando o algoritmo de bolha
+        '''
+    trocou = True
+    while trocou == True:
+        for i in range(len(seq) - 1):
+            trocou = False
+            if seq[i + 1] < seq[i]:
+                seq[i], seq[i + 1] = seq[i + 1], seq[i]
+                trocou = True
+    return seq
+
+def bubble_sort(lista):
+    '''bubble_sort(lista) --> lista
+        Recebe uma lista com números inteiros como parâmetro
+        Devolve esta lista em ordem crescente, utilizando o algoritmo bubble sort.
+        Imprime o estado atual da lista toda vez que faz uma alteração em seus elementos.
+    '''
+
+    reordenou = False
+
+    for i in range(len(lista) - 1, 0, -1):
+        for j in range(i):
+            if lista[j] > lista[j + 1]:
+                lista[j], lista[j + 1] = lista[j + 1], lista[j]
+                reordenou = True
+        if not reordenou: return lista
+    return lista
+
+def testes():
+    def teste_crescente():
+        listas = [[1, 2, 3], [1, 1, 1], [-1, -2, -3], [-3, -2, -1], [1, 3, 1], 
+            [3, 1, 2], [1.1, 1.2, 1.3], ["a", "b", "c"], ["c", "b", "a"]]
+        for seq in listas: print(seq, crescente(seq))
+    
+    def teste_algoritmos():
+        metodos = [insercao, selecao, bolha]
+        listas = [lista_grande(5000), lista_grande(10000), lista_quase_ordenada(6000), lista_quase_ordenada(10000)]
+        print(Runtime(metodos, listas, crescente).run_all())
+    
+    teste_crescente()
+    teste_algoritmos()
+
+if __name__ == "__main__": testes()

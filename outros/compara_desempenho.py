@@ -87,3 +87,7 @@ if __name__ == "__main__":
     input_list = [0, 1.5, 2]
     
     print(Runtime(method_list, input_list, tester_method).run_all())
+
+    # Erros a corrigir:
+    # faster[i] = Nonetype --> quando isso acontece?
+    # Transformar método verificador em opcional (fazer que quando ele é igual ao valor de inicialização, não faz a verificação)
