@@ -5,7 +5,6 @@
 
 import scrapy.item import Item, Field
 
-
 class ScrapyCulturalSpItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
