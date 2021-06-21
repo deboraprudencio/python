@@ -3,7 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-import scrapy.item import Item, Field
+from scrapy.item import Item, Field
 
 class ScrapyCulturalSpItem(Item):
     # define the fields for your item here like:
